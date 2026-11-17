@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\DoubleRoom.cs" />
+    <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Guest.cs" />
     <Compile Include="Model\Hotel.cs" />
+    <Compile Include="Model\Person.cs" />
     <Compile Include="Model\Reservation.cs" />
     <Compile Include="Model\Room.cs" />
     <Compile Include="Model\SingleRoom.cs" />

@@ -8,5 +8,9 @@ namespace Hotel_Management_System.Model
 {
     internal class Hotel
     {
+        protected string hotelName;
+        protected int rooms;
+        protected int guests;
+        protected int reservations;
     }
 }

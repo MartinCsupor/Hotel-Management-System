@@ -6,7 +6,14 @@ using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Model
 {
-    internal class Suite
+    abstract class Suite : Room
     {
+        protected Suite() : base()
+        {
+            this.RoomNumber = 100;
+            this.Floor = 10;
+            this.Capacity = 8;
+            this.PricePerNight = 100000;
+        }
     }
 }
