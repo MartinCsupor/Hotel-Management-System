@@ -11,6 +11,7 @@ namespace Hotel_Management_System.Model
         private int roomNumber;
         private int floor;
         private int capacity;
+
         private double pricePerNight;
 
         protected int RoomNumber { get => roomNumber; set => roomNumber = value; }
