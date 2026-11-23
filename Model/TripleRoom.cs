@@ -8,10 +8,12 @@ namespace Hotel_Management_System.Model
 {
     abstract class TripleRoom : Room
     {
-        protected TripleRoom() : base()
+        public bool isOneDoubleBed;
+        protected TripleRoom(bool isOneDoubleBed) : base()
         {
-            this.RoomNumber = 11;
-            this.Floor = 2;
+            this.isOneDoubleBed = isOneDoubleBed;
+            this.RoomNumber = RoomNumber;
+            this.Floor = Floor;
             this.Capacity = 3;
             this.PricePerNight = 27000;
         }

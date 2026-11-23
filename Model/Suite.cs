@@ -8,10 +8,13 @@ namespace Hotel_Management_System.Model
 {
     abstract class Suite : Room
     {
-        protected Suite() : base()
+        protected int balconySize;
+
+        protected Suite(int balconySize) : base()
         {
-            this.RoomNumber = 100;
-            this.Floor = 10;
+            this.balconySize = balconySize;
+            this.RoomNumber = RoomNumber;
+            this.Floor = Floor;
             this.Capacity = 8;
             this.PricePerNight = 100000;
         }

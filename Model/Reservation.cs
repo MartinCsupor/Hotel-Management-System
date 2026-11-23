@@ -9,12 +9,10 @@ namespace Hotel_Management_System.Model
     internal class Reservation
     {
         protected int id;
-        protected int guestId;
+        protected string hotelName;
         protected int roomNumber;
         protected DateTime checkIn;
         protected DateTime checkOut;
-        protected string status;
-
         public double calculatePrice(double pricePerNight)
         {
             return Convert.ToDouble(checkIn- checkOut) * pricePerNight;

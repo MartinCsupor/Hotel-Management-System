@@ -26,10 +26,6 @@ namespace Hotel_Management_System.Model
             this.PricePerNight = pricePerNight;
         }
 
-        protected Room()
-        {
-        }
-
         public abstract double CalculatePrice(int nights);
         public virtual void GetDetails()
         {
