@@ -13,8 +13,6 @@ namespace Hotel_Management_System.Model
         protected SingleRoom(int udvarMerete) : base()
         {
             this.udvarMerete = udvarMerete;
-            this.RoomNumber = RoomNumber;
-            this.Floor = Floor;
             this.Capacity = 1;
             this.PricePerNight = 15000;
         }

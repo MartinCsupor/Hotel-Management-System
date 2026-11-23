@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hotel_Management_System.Model
 {
-    internal class Hotel
+    public class Hotel
     {
         private string hotelName;
         private int roomCount;
@@ -21,6 +21,11 @@ namespace Hotel_Management_System.Model
             this.HotelName = hotelName;
             this.RoomCount = roomCount;
             this.Reservations = reservations;
+        }
+
+        public void hotelDetails()
+        {
+            Console.WriteLine($"{hotelName} {roomCount} {reservations}");
         }
     }
 }
