@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hotel_Management_System.Model
+﻿namespace Hotel_Management_System.Model
 {
-    abstract class SingleRoom : Room
+    public class SingleRoom : Room
     {
-        protected int udvarMerete;
-        protected SingleRoom(int udvarMerete) : base()
+        protected double yardSize;
+        public double YardSize { get => yardSize; set => yardSize = value; }
+
+        public SingleRoom(int roomNumber, int floor, double yardSize, double pricePerNight = 15000)
+            : base(roomNumber, floor, 1, pricePerNight)
         {
-            this.udvarMerete = udvarMerete;
-            this.Capacity = 1;
-            this.PricePerNight = 15000;
+            if (yardSize < 0) throw new System.ArgumentException("Az udvar mérete nem lehet negatív.");
+            YardSize = yardSize;
+        }
+
+        public double GetYardSize() { return YardSize; }
+
+        public override double CalculatePrice()
+        {
+            return PricePerNight + (YardSize > 10 ? 2000 : 0);
+        }
+
+        public override string GetDetails()
+        {
+            return base.GetDetails() + string.Format(" | Udvar/terasz: {0:0.##} m²", YardSize);
         }
     }
 }

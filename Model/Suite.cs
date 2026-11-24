@@ -1,22 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Hotel_Management_System.Model
+﻿namespace Hotel_Management_System.Model
 {
-    abstract class Suite : Room
+    public class Suite : Room
     {
-        protected int balconySize;
+        protected double balconySize;
+        public double BalconySize { get => balconySize; set => balconySize = value; }
 
-        protected Suite(int balconySize) : base()
+        public Suite(int roomNumber, int floor, int capacity, double balconySize, double pricePerNight = 100000)
+            : base(roomNumber, floor, capacity, pricePerNight)
         {
-            this.balconySize = balconySize;
-            this.RoomNumber = RoomNumber;
-            this.Floor = Floor;
-            this.Capacity = 8;
-            this.PricePerNight = 100000;
+            if (balconySize < 0) throw new System.ArgumentException("Az erkély mérete nem lehet negatív.");
+            BalconySize = balconySize;
+        }
+
+        public double GetBalconySize() { return BalconySize; }
+
+        public override double CalculatePrice()
+        {
+            return PricePerNight * 1.5 + BalconySize * 500;
+        }
+
+        public override string GetDetails()
+        {
+            return base.GetDetails() + string.Format(" | Panoráma erkély: {0:0.##} m²", BalconySize);
         }
     }
 }
